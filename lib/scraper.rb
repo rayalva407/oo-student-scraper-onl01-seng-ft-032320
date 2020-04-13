@@ -26,7 +26,7 @@ class Scraper
       attributes_hash[:twitter] = url if url.include? "twitter"
       attributes_hash[:linkedin] = url if url.include? "linkedin"
       attributes_hash[:github] = url if url.include? "github"
-      attributes_hash[:blog] = url if 
+      attributes_hash[:blog] = url if url.end_with(".com")
     end
     attributes_hash[:profile_quote] = doc.css("div.profile-quote").text
     attributes_hash[:bio] = doc.css("div.description-holder p").text
